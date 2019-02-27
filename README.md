@@ -11,7 +11,7 @@ Example of using `autotools-extension` to configure build process.
 
 Build process will start with a configure step.
 
-You can see the link command used by `distutil`:
+You can see the link command used by `distutils`:
 
     x86_64-linux-gnu-g++ -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions
         -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions
