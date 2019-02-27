@@ -1,6 +1,7 @@
-Example of how to use `autotools-extension` to configure build process.
+Example of using `autotools-extension` to configure build process.
 
-* First install `autotools-extension`
+* First install `autotools-extension`:
+  https://github.com/adelplanque/autotools-extension
 
 * Then run:
 
@@ -17,7 +18,7 @@ You can see the link command used by `distutil`:
         -lboost_python3-py36 -lncursesw -ltinfo
         -o build/lib.linux-x86_64-3.6/waouh.cpython-36m-x86_64-linux-gnu.so
 
-* `@@BOOST_PYTHON_LIB@` has been subtitute by `boost_python3-py36`
+* `@BOOST_PYTHON_LIB@` has been subtitute by `boost_python3-py36`
 * `@CURSES_LIBS@` has been subtitute by `ncursesw` and `ltinfo`
 
 Then
