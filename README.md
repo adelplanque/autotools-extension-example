@@ -5,7 +5,9 @@ Example of using `autotools-extension` to configure build process.
 
 * Then run:
 
-    python setup.py develop --user
+  ~~~bash
+  python setup.py develop --user
+  ~~~
 
 Build process will start with a configure step.
 
@@ -19,11 +21,13 @@ You can see the link command used by `distutil`:
         -o build/lib.linux-x86_64-3.6/waouh.cpython-36m-x86_64-linux-gnu.so
 
 * `@BOOST_PYTHON_LIB@` has been subtitute by `boost_python3-py36`
-* `@CURSES_LIBS@` has been subtitute by `ncursesw` and `ltinfo`
+* `@CURSES_LIBS@` has been subtitute by `ncursesw` and `tinfo`
 
 Then
 
-    python -c 'import waouh; waouh.waouh("Hello world")'
+~~~bash
+python -c 'import waouh; waouh.waouh("Hello world")'
+~~~
 
 will print a beautiful "Hello world".
 
