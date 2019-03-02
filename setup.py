@@ -31,8 +31,8 @@ setup(
 
         dnl ncurses
         AX_WITH_CURSES
-        if test "x$ax_cv_ncurses" != "xyes"; then
-            AC_MSG_ERROR([requires Ncurses library])
+        if test "x$ax_cv_ncursesw" != xyes && test "x$ax_cv_ncurses" != xyes; then
+            AC_MSG_ERROR([requires either NcursesW or Ncurses library])
         fi
 
         AC_CONFIG_FILES([Makefile])
