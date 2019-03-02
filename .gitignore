@@ -1,5 +1,6 @@
-*~
 *.so
-/build
+*~
 /*.egg-info
 /autoconf
+/build
+/dist

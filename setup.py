@@ -31,6 +31,9 @@ setup(
 
         dnl ncurses
         AX_WITH_CURSES
+        if test "x$ax_cv_ncurses" != "xyes"; then
+            AC_MSG_ERROR([requires Ncurses library])
+        fi
 
         AC_CONFIG_FILES([Makefile])
         AC_OUTPUT
@@ -38,5 +41,6 @@ setup(
     configure_options = [
         ('with-boost=', None, "Boost install prefix"),
         ('with-curses=', None, "NCurses install prefix"),
-    ]
+    ],
+    setup_requires=['autotools-extension']
 )
