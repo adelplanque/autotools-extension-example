@@ -17,7 +17,7 @@ setup(
         AC_PREREQ([2.63])
         AC_INIT([waouh], [1.0.0])
         AC_CONFIG_MACRO_DIR([m4])
-        AM_INIT_AUTOMAKE()
+        AM_INIT_AUTOMAKE([foreign -Wall -Werror])
 
         dnl Boost
         AX_BOOST_BASE([1.41], [],
