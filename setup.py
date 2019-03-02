@@ -11,7 +11,7 @@ setup(
     ext_modules=[Extension(
         'waouh',
         sources=['waouh/waouh.cpp'],
-        libraries=['@BOOST_PYTHON_LIB@', '@CURSES_LIBS@']
+        libraries=['@BOOST_PYTHON_LIB@', '@CURSES_LIBS@', '@CURSES_LIB@']
     )],
     configure_ac="""
         AC_PREREQ([2.63])
