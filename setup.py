@@ -11,12 +11,13 @@ setup(
     ext_modules=[Extension(
         'waouh',
         sources=['waouh/waouh.cpp'],
-        libraries=['@BOOST_PYTHON_LIB@', '@CURSES_LIBS@', '@CURSES_LIB@']
+        libraries=['@BOOST_PYTHON_LIB@', '@CURSES_LIBS@']
     )],
     configure_ac="""
         AC_PREREQ([2.63])
         AC_INIT([waouh], [1.0.0])
-        AM_INIT_AUTOMAKE([foreign -Wall -Werror])
+        AC_CONFIG_MACRO_DIR([m4])
+        AM_INIT_AUTOMAKE()
 
         dnl Boost
         AX_BOOST_BASE([1.41], [],
@@ -25,7 +26,7 @@ setup(
 
         dnl Boost Python
         AX_BOOST_PYTHON
-        if test "$ac_cv_boost_python" != "yes"; then
+        if test "x$ac_cv_boost_python" != "xyes"; then
             AC_MSG_ERROR([Boost Python needed])
         fi
 
