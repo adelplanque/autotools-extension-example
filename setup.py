@@ -23,13 +23,13 @@ setup(
 
         dnl Boost Python
         AX_BOOST_PYTHON
-        if test "x$ac_cv_boost_python" != "xyes" || "x$BOOST_PYTHON_LIB" == "x"; then
+        if test "x$ac_cv_boost_python" != "xyes" -o "x$BOOST_PYTHON_LIB" == "x"; then
             AC_MSG_ERROR([Boost Python needed])
         fi
 
         dnl ncurses
         AX_WITH_CURSES
-        if test "x$ax_cv_ncursesw" != xyes && test "x$ax_cv_ncurses" != xyes; then
+        if test "x$ax_cv_ncursesw" != "xyes" -a test "x$ax_cv_ncurses" != "xyes"; then
             AC_MSG_ERROR([requires either NcursesW or Ncurses library])
         fi
     """,
