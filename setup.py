@@ -16,6 +16,9 @@ setup(
         libraries=['@BOOST_PYTHON_LIB@', '@CURSES_LIBS@', '@CURSES_LIB@']
     )],
     configure_ac="""
+        dnl Check for python
+        AX_PYTHON_DEVEL
+
         dnl Boost
         AX_BOOST_BASE([1.41], [],
             AC_MSG_ERROR([Needs Boost but it was not found in your system])
