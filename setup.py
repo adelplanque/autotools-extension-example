@@ -16,11 +16,6 @@ setup(
         libraries=['@BOOST_PYTHON_LIB@', '@CURSES_LIBS@', '@CURSES_LIB@']
     )],
     configure_ac="""
-        AC_PREREQ([2.63])
-        AC_INIT([waouh], [1.0.0])
-        AC_CONFIG_MACRO_DIR([m4])
-        AM_INIT_AUTOMAKE([foreign -Wall -Werror])
-
         dnl Boost
         AX_BOOST_BASE([1.41], [],
             AC_MSG_ERROR([Needs Boost but it was not found in your system])
@@ -28,7 +23,7 @@ setup(
 
         dnl Boost Python
         AX_BOOST_PYTHON
-        if test "x$ac_cv_boost_python" != "xyes"; then
+        if test "x$ac_cv_boost_python" != "xyes" || "x$BOOST_PYTHON_LIB" == "x"; then
             AC_MSG_ERROR([Boost Python needed])
         fi
 
@@ -37,9 +32,6 @@ setup(
         if test "x$ax_cv_ncursesw" != xyes && test "x$ax_cv_ncurses" != xyes; then
             AC_MSG_ERROR([requires either NcursesW or Ncurses library])
         fi
-
-        AC_CONFIG_FILES([Makefile])
-        AC_OUTPUT
     """,
     configure_options = [
         ('with-boost=', None, "Boost install prefix"),
