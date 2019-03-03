@@ -11,6 +11,8 @@ setup(
     ext_modules=[Extension(
         'waouh',
         sources=['waouh/waouh.cpp'],
+        include_dirs=['@BOOST_CPPFLAGS@'],
+        library_dirs=['@BOOST_LDFLAGS@'],
         libraries=['@BOOST_PYTHON_LIB@', '@CURSES_LIBS@', '@CURSES_LIB@']
     )],
     configure_ac="""
